@@ -26,17 +26,17 @@ for(int i = 0;i<ballArray.length;i++){
 //        yLoc += yVel;
 
             //subtract ball width from panel size
-            if (ballArray[i].getXLoc() >= getWidth()) {
-                ballArray[i].setSpeed(-1);
+            if (ballArray[i].getXLoc() >= getWidth()-ballArray[i].getSize()) {
+                ballArray[i].setXSpeed(-1);
             }
             if (ballArray[i].getXLoc() <= 0) {
-                ballArray[i].setSpeed(-1);
+                ballArray[i].setXSpeed(-1);
             }
-            if (ballArray[i].getYLoc() >= getHeight()) {
-                ballArray[i].setSpeed(-1);
+            if (ballArray[i].getYLoc() >= getHeight()-ballArray[i].getSize()) {
+                ballArray[i].setYSpeed(-1);
             }
             if (ballArray[i].getYLoc() <= 0) {
-                ballArray[i].setSpeed(-1);
+                ballArray[i].setYSpeed(-1);
             }
             //this is the delay for repaint
             //you need one of these because it is guaranteed to throw an exception

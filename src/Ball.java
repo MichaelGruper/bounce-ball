@@ -7,18 +7,23 @@ public class Ball {
     private int randomG;
     private int randomB;
     private Color color;
-    private int speed;
+    private int xSpeed, ySpeed;
     private int xLoc, yLoc;
 
     public Ball(int xLoc, int yLoc){
         this.xLoc = xLoc;
         this.yLoc = yLoc;
-        size = 20;
-        speed = 20;
+        size = (int)(Math.random()*30);
+        xSpeed = (int)(Math.random()*20);
+        ySpeed = (int)(Math.random()*20);
         randomR = (int)(Math.random()*255);
         randomG = (int)(Math.random()*255);
         randomB = (int)(Math.random()*255);
         color = new Color(randomR,randomG,randomB);
+    }
+
+    public int getSize(){
+        return size;
     }
 
     public void draw(Graphics g2){
@@ -27,8 +32,8 @@ public class Ball {
     }
 
     public void move(){
-        xLoc += speed;
-        yLoc += speed;
+        xLoc += xSpeed;
+        yLoc += ySpeed;
     }
     public int getXLoc(){
         return xLoc;
@@ -36,11 +41,15 @@ public class Ball {
     public int getYLoc(){
         return yLoc;
     }
-    public int getSpeed(){
-        return speed;
+    public int getXSpeed(){
+        return xSpeed;
     }
-    public void setSpeed(int newSpeed){
-        speed *= newSpeed;
+    public void setXSpeed(int newSpeed){
+        xSpeed *= newSpeed;
+    }
+
+    public void setYSpeed(int newSpeed){
+        ySpeed *= newSpeed;
     }
 
 
